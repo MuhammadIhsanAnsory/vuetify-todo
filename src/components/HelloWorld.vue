@@ -1,58 +1,169 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
+  <v-container>
+    <!-- TEXT -->
+    <!-- <p
+      class="red white--text"
+    >Lorem ipsum dolor sit, amet consectetur adipisicing elit. In qui eos obcaecati ipsa quia corporis vero ex corrupti! Officiis adipisci animi quis ipsum inventore sequi, laudantium temporibus repellat modi incidunt.</p>
+    <p
+      class="pink lighten-4 red--text text--darken-4"
+    >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum ab in tempora ea architecto totam perferendis est nulla, maxime, numquam repudiandae? Est, similique fugit asperiores veritatis incidunt maiores voluptatibus iusto!</p>
+    <br />
+    <h1 class="display-4">Massive Display</h1>
+    <h4 class="display-2 text-center">Smaller Display</h4>
+    <p>Thi is So SO</p>
+    <p class="headline">This is Headline</p>
+    <p class="subheading font-weight-black">This is subheading</p>
+    <p class="caption">thi is caption</p>-->
+
+    <!-- 2. BUTTON -->
+
+    <!-- <v-btn class="pink white--text">Click Me</v-btn>
+      <v-btn dark depressed color="pink">click me</v-btn>
+      <v-btn dark color="pink">click me</v-btn>
+      <v-btn fixed dark color="pink">click me</v-btn>
+      <br />
+      <br />
+      <v-btn class="pink white--text">
+        <v-icon left>email</v-icon>
+        <span>email me</span>
+      </v-btn>
+      <br />
+      <br />
+      <v-btn small class="pink white--text">
+        <v-icon small left>email</v-icon>
+        <span>email me</span>
+      </v-btn>
+      <br />
+      <br />
+      <v-btn fab active-class dark x-large color="purple">
+        <v-icon>favorite</v-icon>
+    </v-btn>-->
+
+    <!-- 3. BREAKPOINTS AND VISIBILITY -->
+
+    <!-- <v-btn class="hidden-md-and-down">click me</v-btn> -->
+    <!-- <v-btn class="hidden-md-and-up">click me</v-btn> -->
+    <!-- <v-btn class="hidden-md-only">click me</v-btn> -->
+
+    <v-row class="text-center">
+      <v-col cols="12">
+        <v-img :src="require('../assets/logo.svg')" class="my-3" contain height="200" />
+      </v-col>
+
+      <v-col class="mb-4">
+        <h1 class="display-2 font-weight-bold mb-3">Welcome to Vuetify</h1>
+
+        <p class="subheading font-weight-regular">
+          For help and collaboration with other Vuetify developers,
+          <br />please join our online
+          <a
+            href="https://community.vuetifyjs.com"
+            target="_blank"
+          >Discord Community</a>
+        </p>
+      </v-col>
+
+      <v-col class="mb-5" cols="12">
+        <h2 class="headline font-weight-bold mb-3">What's next?</h2>
+
+        <v-row justify="center">
+          <a
+            v-for="(next, i) in whatsNext"
+            :key="i"
+            :href="next.href"
+            class="subheading mx-3"
+            target="_blank"
+          >{{ next.text }}</a>
+        </v-row>
+      </v-col>
+
+      <v-col class="mb-5" cols="12">
+        <h2 class="headline font-weight-bold mb-3">Important Links</h2>
+
+        <v-row justify="center">
+          <a
+            v-for="(link, i) in importantLinks"
+            :key="i"
+            :href="link.href"
+            class="subheading mx-3"
+            target="_blank"
+          >{{ link.text }}</a>
+        </v-row>
+      </v-col>
+
+      <v-col class="mb-5" cols="12">
+        <h2 class="headline font-weight-bold mb-3">Ecosystem</h2>
+
+        <v-row justify="center">
+          <a
+            v-for="(eco, i) in ecosystem"
+            :key="i"
+            :href="eco.href"
+            class="subheading mx-3"
+            target="_blank"
+          >{{ eco.text }}</a>
+        </v-row>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
-</script>
+  name: "HelloWorld",
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
+  data: () => ({
+    ecosystem: [
+      {
+        text: "vuetify-loader",
+        href: "https://github.com/vuetifyjs/vuetify-loader",
+      },
+      {
+        text: "github",
+        href: "https://github.com/vuetifyjs/vuetify",
+      },
+      {
+        text: "awesome-vuetify",
+        href: "https://github.com/vuetifyjs/awesome-vuetify",
+      },
+    ],
+    importantLinks: [
+      {
+        text: "Documentation",
+        href: "https://vuetifyjs.com",
+      },
+      {
+        text: "Chat",
+        href: "https://community.vuetifyjs.com",
+      },
+      {
+        text: "Made with Vuetify",
+        href: "https://madewithvuejs.com/vuetify",
+      },
+      {
+        text: "Twitter",
+        href: "https://twitter.com/vuetifyjs",
+      },
+      {
+        text: "Articles",
+        href: "https://medium.com/vuetify",
+      },
+    ],
+    whatsNext: [
+      {
+        text: "Explore components",
+        href: "https://vuetifyjs.com/components/api-explorer",
+      },
+      {
+        text: "Select a layout",
+        href: "https://vuetifyjs.com/getting-started/pre-made-layouts",
+      },
+      {
+        text: "Frequently Asked Questions",
+        href:
+          "https://vuetifyjs.com/getting-started/frequently-asked-questions",
+      },
+    ],
+  }),
+};
+</script>
